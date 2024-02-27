@@ -1,0 +1,84 @@
+# Project – Gray and Sons audit
+
+## GTMetrix report 
+
+
+Slugs List:
+
+
+Home Page - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/gDLNCOXX/
+
+1. about-us - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/k3RKOku5/
+2. all-watch-brands - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/WnlLUiG4/
+3. blog - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/kWFP5goL/
+4. catalog-request - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/7oAY3HHw/
+5. checkout - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/PZVEI16B/
+6. checkout-thank-you - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/YMitq3wB/
+7. contact - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/hHowFvp9/
+8. contact-info-submitted-thank-you - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/ANymrRX1/
+9. email-signups - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/b0GnjKCR/
+10. ez-ship-box-request-form - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/JCjeRycz/
+11. glossary - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/2O5SLsgV/
+12. grayandsons-fanclub - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/OiSAhqkV/
+13. news - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/Qi4SCxLE/
+14. pop-up-question-submission-result - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/KUNs3LFm/
+15. repairs - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/7no4GkDr/
+16. testimonials - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/cCwCBUoZ/
+17. thank-you-catalog - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/oNqsKo7a/
+18. fine-watches - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/Mhs8YSAl/
+19. jewelry - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/B6Duz999/
+20. jewelry/estate-jewelry-and-vintage-jewelry/bracelets-and-bangles - https://pagespeed.web.dev/analysis/https-fabulous-gecko-88393f-netlify-app-jewelry-estate-jewelry-and-vintage-jewelry-bracelets-and-bangles/tnr1pgbz31?form_factor=mobile
+21. jewelry/estate-jewelry-and-vintage-jewelry/jewelry-sets - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/TaHvRlI9/
+22. s520548-gia-certified-marquise-cut-diamond-4 - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/Cy7sh2ak/
+23. n516242-david-yurman-renaissance-double-cable - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/j2Ivbnse/
+24. w526680-hublot-m-d-m-28mm-13913-054 - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/dZWqFVE8/
+25. accessibility - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/y1D7gP8y/
+26. availability - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/PNyBhYil/
+27. bitcoin - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/bUBcntpW/
+28. buying-diamonds-online - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/cq2syQZa/
+29. blog/gray-and-sons-jewelers-features-top-of-the-line-orbita-watch-winders - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/6U6hiMab/
+30. blog/the-exclusive-blancpain-leman-tourbillon-perpetual-calendar-2652 - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/mNH6kb3Q/
+31. blog/buying-vintage-pre-owned-rolex-watches - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/N1yOAU2o/
+32. a-lange-sohne-watch-repair https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/5FhnpoM9/
+33. baume-and-mercier-repair-blog - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/I6ASPF5H/
+34. crown-replacement - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/eyonDTTr/
+35. crystal-replacement-rolex-cartier-patekphilippe - https://gtmetrix.com/reports/fabulous-gecko-88393f.netlify.app/LIWn6ecq/
+36. diamond-bracelet-case-bezel-repair - https://gtmetrix.com/reports/pagespeed.web.dev/UBUTRZii/
+
+
+
+
+## Issues
+
+### Important
+
+
+- [ ] If we will take a look waterfall we will see page-data.json files which are prefetched pages data which gatsby generates based on all links. 
+So if we have link to accessoires pages on the currect page - gatsby will add prerendered data. 
+
+
+![waterfall-hp](/code/waterfall.png)
+
+For example here https://fabulous-gecko-88393f.netlify.app/page-data/sterlingsilver/page-data.json - 712KB size. 
+
+The main reason why this file is so large it's the way we render our images, e.g here how looks one image prerendere data:
+
+
+![one-image-prefetch-data](/code/one-image-prefetch-data.png)
+
+There are a total of 13 sizes for each image in 3 formats: webp, avif, and auto. I recommend reducing the number of sizes to 4 and removing webp (avif has better compression), as we have the default, which is the jpeg format.
+
+https://caniuse.com/?search=avif
+
+
+Greg, plesae take a look also this one: 
+
+https://pagepro.co/blog/images-on-gatsby-website-vs-google-pagespeed-score/#6-gatsby-image-usage-with-additional-attributes
+
+These recommendations look really useful:
+
+fadeIn={false} – disables the fadein effect (no additional javascript action to top up the image)
+loading=”eager” – set the browser’s native lazy attribute to eager
+
+
+And second one is chat issue, but it's described in lighthouse report.

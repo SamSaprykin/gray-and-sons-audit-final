@@ -1,0 +1,138 @@
+# Issues List
+
+## Metadata comparison
+
+- [ ] **Masterlist** <b>THE MASTERLIST </b> file: https://docs.google.com/spreadsheets/d/1W-Wu1axtteUhTze2soMyY3UV0zWZ4wc1QwJepEFd9Zo/edit#gid=0
+
+### Critical
+
+---
+
+- [ ] **Greg** `rel=canonical` - Missing for all pages
+
+Description
+
+Missing rel=canonical tag on all pages of the site.
+
+Solution
+
+- [x] a) Need to add rel=canonical tag to all pages of the site. It should link to itself except for pagination pages.
+
+- [x] b) On pagination pages, the rel=canonical tag should point to the first page of the category, i.e.:
+
+  https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/
+
+  <link
+    rel="canonical"
+    href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/"
+  />
+
+  https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-2/
+
+  <link
+    rel="canonical"
+    href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/"
+  />
+
+  https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-3/
+
+  <link
+    rel="canonical"
+    href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/"
+  />
+
+  https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-4/
+
+  <link
+    rel="canonical"
+    href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/"
+  />
+
+- [x] c) On filter pages, rel="canonical" should indicate the original URL without # (filter)
+
+  https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/#price_filter=%2410%2C000-%2419%2C999
+
+  <link
+    rel="canonical"
+    href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/"
+  />
+
+- [ ] **Greg** d) The search results page should contain rel="canonical" to the home page.
+
+  https://fabulous-gecko-88393f.netlify.app/search/?q=rolex
+
+  <link rel="canonical" href="https://fabulous-gecko-88393f.netlify.app" />
+
+  https://fabulous-gecko-88393f.netlify.app/search/
+
+  <link rel="canonical" href="https://fabulous-gecko-88393f.netlify.app" />
+
+---
+
+- [ ] **Masterlist** Missing or Empty Title
+
+Description
+
+Pages that don't have the meta Title filled in:
+
+https://docs.google.com/spreadsheets/d/1Tp1W_5FZQEvF-W1E48eoMn8U_jk-TFjLYu9hGcNX4bY/
+
+Solution
+
+Meta Title should be filled in on all pages of the site.
+
+---
+
+- [ ] **Masterlist** Duplicate Titles
+
+Description
+
+Pages that contain duplicate meta Title.
+
+https://docs.google.com/spreadsheets/d/1wyN6SuXaaZsEtyvktFDc64NWiZ0grPe2shHv8lWH2EQ/
+
+Solution
+
+Meta Title is recommended to be made unique on the website.
+
+---
+
+### Warnings
+
+- [ ] **Masterlist** Missing or Empty Description
+
+Description
+
+Pages that don't have a meta Description filled in:
+
+https://docs.google.com/spreadsheets/d/1KuGoBvPt6VoxrJbdXh9nnOafecMuw8_6FQyPvrq1kKE/
+
+Solution
+
+Meta Description is recommended to be filled in on all pages of the site.
+
+---
+
+- [ ] **Masterlist** Duplicate Descriptions
+
+Description
+
+Pages that contain duplicate meta Descriptions.
+
+https://docs.google.com/spreadsheets/d/1EvGSF_It1IaHa7pFbmexmltt4Hf96FcGPYi0mCVP-dw/
+
+Solution
+
+Meta Descriptions are recommended to be made unique on the site.
+
+---
+
+- [x] **Greg** The Open Graph protocol
+
+Description
+
+There is no Open Graph markup on the pages of the site.
+
+Solution
+
+Add Open Graph markup https://ogp.me/

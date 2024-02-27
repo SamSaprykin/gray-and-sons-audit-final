@@ -1,0 +1,409 @@
+# Issues List
+
+### Critical
+
+---
+
+- [x] **Greg** Robots.txt _Sam: Updated_
+      Description
+
+https://fabulous-gecko-88393f.netlify.app/robots.txt
+
+Solution
+
+It is necessary to create a correct Robots.txt for Netlify. Since there are many unnecessary commands that do not apply to Netlify, for example:
+
+Disallow: /wp-admin
+Disallow: /tag//
+Disallow: /404/
+Allow: /\*?p=
+
+Sam: Greg, Jenya sent me correct robots.txt file, please update current one with that:
+
+```
+Robots.txt
+Description
+https://fabulous-gecko-88393f.netlify.app/robots.txt
+Solution
+Make changes to the Robots.txt file and make it as follows:
+User-agent: *
+Allow: /
+Disallow: *sort_by=*
+Disallow: *_filter=*
+Disallow: *_attribute=*
+Disallow: *_material=*
+Disallow: *_shape=*
+Disallow: *_style=*
+Disallow: *size=*
+Disallow: *brand=*
+Disallow: *search=*
+Disallow: *band_type=*
+Disallow: /search/
+Disallow: /checkout/
+Sitemap: https://fabulous-gecko-88393f.netlify.app/sitemap/sitemap-index.xml
+```
+
+---
+
+- [x] H headings in the footer (global) _Sam: Updated_
+
+Description
+
+Right now, the H headings in the footer look like this:
+
+![footer-headings](/seo/footer-headings.png)
+
+Make the H headings in the footer as follows:
+
+![footer-headings-todo](/seo/footer-headings-todo.png)
+
+---
+
+- [x] H3 headings on logos _Sam: Updated_
+
+https://fabulous-gecko-88393f.netlify.app/
+
+Description
+
+For logos, the H3 heading is used. This is not necessary, as headings should contain text, not images.
+
+![trusted-images-headings](/seo/trusted-images-headings.png)
+
+![logos-headings-are-empty](/seo/logos-headings-are-empty.png)
+
+Solution
+
+Need to remove H3 headings from logo images.
+
+---
+
+- [x] Texts in categories
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-cellini/
+
+A link should be a link, not text. Links to search results will not work on the new site. That is, they will be 404 errors.
+Need to remove all links to search results.
+
+![cellini-page](/seo/cellini-page.png)
+
+- [x] **Dennis** https://fabulous-gecko-88393f.netlify.app/fine-watches/cartier/
+
+![cartier-link](/seo/cartier-link.png)
+
+- [x] **Dennis** Paragraphs of text should not be highlighted with H headings
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/cartier/cartier-pasha/
+
+![pasha-text-formatting](/seo/pasha-text-formatting.png)
+
+Solution
+
+1. Check all texts and perform correct formatting, especially blog pages and pages where content was copied from the previous CMS
+2. Remove links to search results.
+3. There should be no paragraphs of text in H headings
+
+---
+
+- [x] Changes in texts after transfer to a new site
+
+Description
+https://www.grayandsons.com/fine-watches/cartier/cartier-pasha.html
+https://fabulous-gecko-88393f.netlify.app/fine-watches/cartier/cartier-pasha/
+
+![text-format-1](/seo/text-format-1.png)
+
+![text-format](/seo/text-format.png)
+
+Differences in H1 headings
+
+OLD: Used Cartier Pasha Watches
+NEW: CARTIER PASHA
+
+The new site added the H2 heading "Cartier Pasha info", which was not on the old site.
+
+Pre-owned Cartier Pasha Watch at Gray and Sons - became H4 heading.
+
+Added a paragraph with links that blend in with the regular text, on the old site they were buttons.
+
+Solution
+
+Please check all texts carefully. Perform correct formatting of texts. Remove old links or replace with links from the new site.
+This work is best done by a human being.
+
+---
+
+- [x] Text above products in categories on pagination pages
+
+Description
+
+The text above products in categories on pagination pages should only be on the first page.
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/cartier/cartier-pasha/page-4/
+
+Solution
+
+Leave text only on the first page of a category.
+
+Remove texts from all pagination pages.
+
+![pagination-text](/seo/pagination-text.png)
+
+---
+
+- [x] UI related issue: menu under the "FIND YOUR WATCH" block
+
+Description
+
+The menu page is located below the "FIND YOUR WATCH" search results block
+
+https://fabulous-gecko-88393f.netlify.app/find-your-watch/
+
+![ui-menu](/seo/ui-menu.png)
+
+Solution
+Fix the layout.
+
+---
+
+- [ ] **Greg** 404 URLs from the old site
+
+Description
+
+This is a list of URLs that are on the old site, but on the new site they return a 404 error, meaning there is no such page.
+
+https://docs.google.com/spreadsheets/d/1R4eOa-T3tc7vMpDUMf2T0Hetkj3CPjo0ZeGPDe2zUn8/edit#gid=8683093&range=A:A
+
+Solution
+Set these pages to redirect to alternate pages, either category or homepage.
+
+---
+
+- [ ] **Greg** 404 URLs from the GSC
+
+Description
+
+This is a list of URLs that were previously (once upon a time) on the site, but are now returning a 404 error.
+
+https://docs.google.com/spreadsheets/d/1yOXaowivVAw2hOiJhscClS9PJxBoTv0iX6ti_pD-Icc/edit#gid=1409485356&range=A:A
+
+Solution
+
+Configure these URLs to redirect to alternative pages, to a category, or to the home page.
+
+You can use regular expressions to reduce the number of lines for redirects.
+
+---
+
+- [x] Create an html page "WATCH SIZE GUIDE"
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/w527655-rolex-day-date-40-40mm-228235/
+
+This block is implemented inconveniently for people. The user will not be able to use the content from this block properly, especcialy on mobile devices
+
+Solution
+
+Create a separate page(or popup with information, not a pdf file) for this content and replace the link to it in the product cards.
+
+---
+
+- [x] Missing or Empty Description
+
+Description
+
+https://docs.google.com/spreadsheets/d/1yGky1xtcENN1zR9M3xhNL21GHnG-PV2CI_R46ZadaCc/
+
+Solution
+
+Fill in the meta Description so that it describes the content of the page.
+
+---
+
+- [x] Missing or Empty Title
+
+Description
+
+https://docs.google.com/spreadsheets/d/1xlQzZmtQDL9tJ6W9jtadAZc2G6Mu1PVgKEpJs5tCw9o/
+
+Solution
+
+Fill in the meta Title so that it describes the content of the page.
+
+---
+
+- [ ] **Masterlist** Duplicate H1
+
+Update 12/6: 133 duplicate H1s left
+
+Description
+
+https://docs.google.com/spreadsheets/d/1EpQmvIWBpOdenv1lYwS2BfJRiO3V5RAY9Fb-E7yfDp0/
+
+Solution
+
+Make unique H1 headings as much as possible.
+
+---
+
+- [ ] **Masterlist** Duplicate Descriptions
+
+Update 12/6: 4727 duplicate descriptions left
+
+Description
+
+https://docs.google.com/spreadsheets/d/1Eto3Av6QUSgHR9nWH_mfQFtmZ4CY0xGyUBM-7GL7zjE/
+
+Solution
+
+Make the meta Description as unique as possible. For example, in the meta data template you can add H1 at the beginning, the product item, then the rest of the text that is there now.
+
+---
+
+- [ ] **Masterlist** Duplicate Titles
+
+Update 12/6: 4118 duplicate titles left (mostly products)
+
+Description
+
+https://docs.google.com/spreadsheets/d/1l0FTCo3at18LLliJllUT6DRFm1P1Oses1XV8dSgAF8U/
+
+Solution
+
+Make the meta Title as unique as possible.
+
+---
+
+- [x] Structured data with syntax errors detected _Sam: Updated? Need check_
+
+Description
+
+Parsing error: Missing '}' or object member name
+
+https://search.google.com/test/rich-results/result/r%2Funknown-type?id=TsrTaffJyvsL2A_5JPyMFA
+
+Solution
+
+Fix an error in structured data
+
+---
+
+- [x] Page 1 in the meta Title on the first page of the category
+
+Description
+
+Now the meta Title is "H1 | Page # | BrandName"
+
+"Top Picks | Page 1 | Gray & Sons Jewelers"
+
+Solution
+
+Need, remove | Page # and make the template for the meta Title as follows "H1 | BrandName".
+
+"Top Picks | Gray & Sons Jewelers."
+
+This is only for the first page of the category.
+
+---
+
+- [ ] **Greg** Internal links from the old site
+
+Update 12/6: 4017 broken internal links left
+
+Description
+
+This is a list of internal links that are carried over from the old site and have the old URL, meaning that on the new site they will either be in a 301 redirect or link to a 404 page that doesn't exist.
+
+https://docs.google.com/spreadsheets/d/18ibTSkcCZF3_x8mg9AsMuCIUoouk88j3czjnuj39v1Q/
+
+From URL - the page where the link is located.
+
+Link Type - the type of link (standard or image).
+
+URL - internal link from the old site, it should be replaced.
+
+Anchor (Link) Text - text anchor on which the link is placed
+
+Solution
+
+Replace URL links with URLs from the new site.
+
+---
+
+- [x] Replace the link with Google Map - link from the product page goes to the address, not gray and sons
+
+Description
+
+The link is used in the product card
+
+https://www.google.com/maps/search/?api=1&query=9595%20Harding%20Ave%2C%20Surfside%2C%20FL%2C%2033154&ll=Gray%20&%20Sons
+
+Elsewhere the link is used
+
+https://www.google.com/maps/place/Gray+%26+Sons+Jewelers/@25.8869528,-80.1256943,17z/data=!4m5!3m4!1s0x88d9b2992b408533:0x8d702d6011cda310!8m2!3d25.8869497!4d-80.1235631
+
+Solution
+
+1. Recommend replacing the link with https://maps.app.goo.gl/aNtfVtZo1bYeaHbR9.
+
+2. Recommend adding Nofollow.
+
+![paddress-prod-page](/seo/address-prod-page.png)
+
+![where-take-address](/seo/where-take-address.png)
+
+---
+
+- [x] Product Card, H Headings
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/w527584-rolex-daytona-40mm-116509/
+
+Solution
+
+```
+<H2>
+```
+
+pre-owned Rolex Mens Watch Details - Pre-owned - write in capital letters.
+
+![pre-owned](/seo/pre-owned.png)
+
+---
+
+- [x] **Greg** 404 Not Found
+
+Description
+
+A list of pages that are not on the site:
+
+https://docs.google.com/spreadsheets/d/16ZdmbH67RTHzo3aRlFJ6vF7ajc6s8RLde4Rftdy-YDw/
+
+A list of pages that contain links to non-existent pages:
+
+https://docs.google.com/spreadsheets/d/1pTLbCIWxGEgJk8O990O6eACd4Z2_JBwIY8C-uIY6wuA/
+
+Solution
+
+Need to remove links to non-existent pages, or replace with links with response code 200. (not to set up a redirect, but to replace them).
+
+---
+
+- [x] **Greg** RequestFailure
+  > Greg: [#1 link](https://www.bbb.org/us/fl/surfside/profile/jewelry-stores/gray-and-sons-0633-5002407) works fine on my end.
+  > Other than that, all other links are fixed.
+
+Description
+
+A list of incorrectly filled links:
+
+https://docs.google.com/spreadsheets/d/1waixjDxG_ZK_h6Tdfnxm1ISb4qsgAVUjlSb7x2fx4s0/
+
+List of pages that contain incorrectly filled links:
+
+https://docs.google.com/spreadsheets/d/1SUZZg19vFNhOjMawolIlnkLc0q9WnwAk5G7Lm1iOUC4/
+
+Solution
+
+Need to remove invalid links, or replace with links with a response code of 200.

@@ -1,0 +1,1008 @@
+
+
+- [ ] Input Select component:
+   <br /> a) Do not use Array index in keys
+   <br /> b) Remove commented out commented
+
+![index-comment](/code/index-comment.png)
+
+- [ ] Use 'Object.hasOwn()' instead of 'Object.prototype.hasOwnProperty.call()'
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+
+multiple files:
+
+a) checkout
+b) send-form
+c) paypalclient
+d) getUTMCodes
+e) AlgoliaClient
+f) TrackingHelper
+g) glossary
+
+
+- [ ]  Home menu component
+
+    <br /> a) <code> const [currentLetter, setLetter] = useState(null) </code>
+
+    <br /> useState call is not destructured into value + setter pair, update setLetter with setCurrentLetter
+
+    <br /> b) Do not use Array index in keys
+
+            ```
+            <DropdownMenuLink
+                onClick={onMenuLinkClicked}
+                key={`${url.replace('/', '-')}-${index}`}
+                to={uniformUrl(url)}
+                >
+                {name}
+            </DropdownMenuLink>
+            ```
+    <br /> c) Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+            ```
+                Line 253
+                <div
+                    className="relative z-50 w-full border-b bg-white md:px-10"
+                    onMouseEnter={onMenuEnter}
+                    onMouseLeave={onMenuLeave}
+                >
+
+               
+            ```
+
+            ```
+                Line 404
+                <div
+                    className="w-[25px] h-[20px] relative right-0 top-0 lg:hidden order-4 cursor-pointer"
+                    onClick={onBurgerClick}
+                >
+
+            ```
+
+            ```
+                Line 447
+                <nav
+                    className={
+                    (navbarOpen ? '' : 'hidden lg:block ') +
+                    ' absolute left-0 right-0 bottom-0 top-[65px] overflow-x-hidden bg-white lg:bg-red-800 lg:relative lg:top-0 lg:overflow-visible z-40'
+                    }
+                    data-dropdown={0}
+                    onMouseLeave={handleDropdown}
+                    itemScope
+                    itemType="https://schema.org/SiteNavigationElement"
+                >
+
+            ```
+
+    <br />  d) Typo: update arial-label with aria-label
+
+            ```
+             <button
+                arial-label="Search"
+                className={
+                  (dropDown === 3 ? 'bg-red-700  text-white ' : 'text-black ') +
+                  'overflow-hidden rounded-full w-10 p-2 duration-200 group-hover:bg-red-700  group-hover:text-white'
+                }
+                onClick={openSearchBar}
+              >
+            ```
+
+- [ ] PopUpsAndChat component
+
+
+        <br />   a) Remove Comment
+
+            ```
+
+            Line 56
+            // const liveChatVisibility = () => {
+            //   if(makeAnOffer.offerSent && makeAnOffer.showChat) return 'maximized'
+            //   if(makeAnOffer.showPopup) return 'hidden'
+            //   return 'minimized'
+            // }
+
+            ```
+
+              
+       <br /> b)  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element
+
+        ```
+           {showBackdrop ? (
+                <div
+                onClick={() => setShowBackdrop(false)}
+                className="hidden cursor-pointer backdrop-blur-[2px] md:block top-0 left-0 fixed w-screen h-screen z-90 bg-[rgba(120,120,120,0.5)]"
+                />
+            ) : null}
+
+        ```
+
+- [ ]  Shop header component
+
+
+        <br />   a) Use input type="button", input type="image", input type="reset", input type="submit", or button instead of the "button" role to ensure accessibility across all devices
+
+        ```
+            Line 58
+
+            <div className={'group relative z-30'} tabIndex={0} role={'button'}>
+        ```
+
+- [ ]  Ask question Pop up
+
+       <br /> a)  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element
+
+        ```
+            Line 123
+
+            <div
+                onClick={closeAskAQuestion}
+                className=" fixed -top-11 z-20 flex h-[calc(100vh+10%)] w-screen items-center justify-center bg-black opacity-30 backdrop-blur-md cursor-alias"
+            ></div>
+        ```
+
+
+- [ ]  Ask question Pop up
+
+        <br /> a)  Remove comment
+
+        ```
+            Line 26
+
+            {
+                name: 'Full Name',
+                phone: 'Phone Number (unformatted)',
+                email: 'Email Address',
+                offer: 'Offer Amount',
+                message: 'Custom Message (optional)
+                product: {
+                    name: 'Product Name',
+                    sku: 'SKU Number',
+                    price: 'Original Price',
+                    image: 'URL to product image',
+                    url: 'URL to product page',
+                }
+            }
+        ```
+
+         <br /> b)  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element
+
+        ```
+            Line 179
+
+            <div
+                onClick={closeModal}
+                className=" fixed -top-11 z-10 flex h-[calc(100vh+10%)] w-screen items-center justify-center bg-[rgba(0,0,0,.3)] backdrop-blur-md cursor-alias"
+            ></div>
+        ```
+
+- [ ]  Filter Find Your Watch  
+
+
+        <br /> a)  Do not use Array index in keys
+
+        ```
+            Line 76
+
+            <div key={attribute + '_' + k} className="relative">
+        ```
+
+
+        ```
+            Line 232
+
+            <div key={attribute + '_' + k} className="relative">
+        ```
+
+        ```
+            Line 285
+
+            <div key={attribute + '_' + k} className="relative">
+        ```
+
+              
+        <br /> b) Remove commented code
+
+        ```
+            Line 328 - 361
+
+            // input_id = 'check_sort_by_0'
+            // const isSelected = attribute in facetFilters && checkChecked(attribute, facet) === true
+        ```
+
+- [ ] Filter Panel Component
+
+        <br /> a) Provide a compare function to avoid sorting elements alphabetically.
+
+        ```
+            Line 71
+
+            Update 
+            const sortedFacets = Object.keys(facets).sort()
+
+            with
+            const sortedFacets = Object.keys(facets).sort((a, b) => a.localeCompare(b))
+        ```
+
+        <br /> b) Do not use Array index in keys
+
+        ```
+          <div key={key + '_' + k} className={'py-2 hover:text-gray-500 accent-gray-500'}>
+        ```
+
+- [ ]  Find your size component
+
+
+        <br /> a) Using target="_blank" without rel="noreferrer" (which implies rel="noopener") is a security risk in older browsers: see https://mathiasbynens.github.io/rel-noopener/#recommendations
+
+         ```
+            Line 35
+
+            <a
+                href={guideUrl}
+                target={'_blank'}
+                rel="noopener"
+                className=" hover:text-red-600 "
+                onClick={onClickHandler}
+            >
+        ```
+
+- [ ] Pagination
+
+        <br /> a) Remove commented code
+
+        ```
+            Lines 12 - 23
+
+                {/* {pages.map(page => { */}
+                {/*   return (<React.Fragment key={page}> */}
+                {/*     {page === 1 || pages.find(p => p === page - 1) ? '' : <div className={'px-4'}>...</div>} */}
+                {/*     <div className={'px-4 ' + (page === offset + pageInfo.currentPage ? 'font-bold' : '')}> */}
+                {/*       {baseUrl ? */}
+                {/*         <Link to={baseUrl + (page > 1 ? '/page-' + page : '') + '/'}>{page}</Link> : */}
+                {/*         <button onClick={() => onClick && onClick(page)}>{page}</button> */}
+                {/*       } */}
+                {/*     </div> */}
+                {/*   </React.Fragment>) */}
+                {/* })} */}
+        ```
+
+- [ ] Price Card
+
+
+        <br /> a) Remove the declaration of the unused 'isSale' variable.
+
+        ```
+            Line 59
+    
+            const isSale = isOnSale(product)
+        ```
+
+
+- [ ] Product Grid 
+
+        <br /> a) Remove commented code or add some node if this code migh be useful in th future
+
+        ```
+            Line 49
+
+              /* {isSale && (<span>
+                    &ensp;<span
+                    className={"bg-red-700 px-3 text-lg font-bold text-white inline-block" + (isSale ? "" : " hidden")}>SALE</span></span>)}*/
+        ```
+
+        <br /> b) Non-interactive elements should not be assigned mouse or keyboard event listeners.
+
+        ```
+            Line 84
+
+            window.location.search.indexOf('sku') > -1 ? (
+                <p onClick={handleCopyAndPreventRedirect} className="my-2 font-bold cursor-copy">
+                    {product.sku}
+                </p>
+            ) : null
+        ```
+
+        <br /> c) Remove commented code
+
+        ```
+            Line 181
+
+              /* {isSale && (<span>
+                    &ensp;<span
+                    className={"bg-red-700 px-3 text-lg font-bold text-white inline-block" + (isSale ? "" : " hidden")}>SALE</span></span>)}*/
+        ```
+
+- [ ]  ProductStickyHeaderCard
+
+        <br /> a) Remove unknown property isInCart
+
+        ```
+            Line 55
+
+            <button
+                    onClick={addProductToCart}
+                    isInCart={isInCart}
+                    className=" absolute -bottom-6 right-3 rounded-full border-2 border-white bg-red-700 p-3 text-sm text-white shadow-lg"
+                >
+        ```
+
+
+- [ ] SocialMediaCard 
+
+        <br /> a) Remove commented code or add some node if this code migh be useful in th future
+
+        ```
+            Lines 107-259
+
+            const [ref, inView] = useInViewPort()
+            //
+            //   const {
+            //     allYoutube: { nodes: YouTubeData },
+            //     allInstagram: { nodes: Instagram },
+            //     allFaceb
+            ...
+        ```
+
+- [ ]  BrandRepairServices
+      
+        <br /> a) Do not use Array index in keys
+
+        ```
+            Lines 123
+
+            <RepairIconsLinks
+                key={index}
+                className={arrayElement.className}
+                url={arrayElement.url}
+                label={arrayElement.label}
+                icon={arrayElement.icon}
+            />
+        ```
+
+- [ ]  EZShipBoxSideForm
+
+        <br /> a) Update imports to prevent duplicate
+
+        ```
+            Line 2
+
+            import React from 'react'
+            mport { useState, useEffect } from 'react'
+
+            import React, { useState, useEffect } from 'react'
+
+        ```
+
+        <br /> a) Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element
+
+        ```
+            Line 37
+
+            <div
+                onClick={toggleForm}
+                className={
+                'hidden fixed inset-0 md:block top-0 left-0 w-full h-full z-10 bg-black opacity-20 delay-1000 duration-200 ease-in-out motion-safe:animate-fade-out-20'
+                }
+            />
+            <div
+                onClick={toggleForm}
+                className={
+                'hidden backdrop-blur-[2px] fixed inset-0 md:block top-0 left-0 w-full h-full z-10 delay-1000 duration-200 ease-in-out motion-safe:animate-fade-out'
+                }
+            />
+
+        ```
+
+- [ ]  ImageGallerySlider component
+
+        <br /> a) Do not use Array index in keys
+
+
+        ```
+            Line 81
+
+             <ImageGallerySliderItem
+                key={'image-' + index}
+                onClick={e => {
+                e.preventDefault()
+                if (onSlideChange) onSlideChange({ slide, index })
+                }}
+            >
+
+        ```
+
+- [ ]  ProductSlider component
+
+         <br /> a) useState call is not destructured into value + setter pair
+
+
+        ```
+            Line 24
+
+            const [fav, openFavorite] = useState(null)
+
+            Update To
+            const [fav, setFav] = useState(null)
+
+        ```
+
+- [ ] About Card Grid 
+
+        <br /> a) Do not use Array index in keys
+
+
+        ```
+            Line 10
+
+            <AboutCard
+                key={index}
+                email={member.email}
+                name={member.name}
+                title={member.title}
+                image={member.image}
+                bio={member.bio}
+            />
+
+        ```
+
+- [ ]  Cart Summary Component
+
+        <br /> a) Remove IconQuote import, since it's never used
+
+
+        ```
+            Line 17
+
+            import { IconCirclePlus, IconQuote } from './Icons'
+
+        ```
+
+- [ ]  Category Image
+
+        <br /> a) Remove product prop, since it's never used
+
+
+        ```
+            Line 144
+
+            product = null,
+
+        ```
+
+- [ ] Checkout Details 
+
+         <br /> a) Remove commented code
+
+
+        ```
+            Line 135
+
+             {/* <InputField
+                className="col-span-2 lg:col-span-1"
+                name={'shipping_state'}
+                label={'State'}
+                form={checkout}
+                onChange={updateShipping}
+                required={true}
+            />{' '} */}
+
+        ```
+
+- [ ]  Checkout Payment 
+
+         <br /> a) Non-interactive elements should not be assigned mouse or keyboard event listeners. Update label with button
+
+
+        ```
+            Line 115
+
+            <label
+              key={method.value}
+              onClick={() => setSelected(true)}
+              className={
+                'radio-label w-80  overflow-hidden duration-700 ease-out ' +
+                (selected && checkout.payment_method !== method.value
+                  ? 'payment-selection'
+                  : 'h-12 p-2')
+              }
+            >
+
+        ```
+
+- [ ] Checkout Process 
+
+         <br /> a) Remove useState import
+
+
+        ```
+            Line 6
+
+            import { useEffect, useState } from 'react'
+
+        ```
+
+- [ ]  Contact Side Cards
+
+        <br /> a) Using target="_blank" without rel="noreferrer" (which implies rel="noopener") is a security risk in older browsers: see https://mathiasbynens.github.io/rel-noopener/#recommendations
+
+
+        ```
+             <a
+                href="mailto:viktoria@grayandsons.com"
+                target="_blank"
+                className="uppercase w-full rounded-md bg-gray-500 py-2 text-white hover:bg-red-700 px-8 max-w-max"
+            >
+                Email
+            </a>
+        ```
+
+- [ ]  Fan Card Grid
+
+        <br /> a) Do not use Array index in keys
+
+        ```
+            <FanCard name={fanCard.name} text={fanCard.text} image={fanCard.image} key={index} />
+        ```
+
+- [ ] Favourite Item
+
+        <br /> a) A fragment with only one child is redundant
+
+        ```
+            Lines 53 - 121
+
+            <>
+                <div className="min-w-screen fixed top-0 left-0 z-10 min-h-screen w-full bg-slate-400 bg-opacity-[35%] backdrop-blur-sm">
+                    <div className="inset-0 cursor-alias absolute" onClick={onClosePopup} />
+                         <div className="fade-in-favorite absolute top-[50%] left-[50%] grid w-10/12 max-w-[800px] -translate-y-[50%] -translate-x-[50%] grid-cols-2 gap-3 rounded-xl bg-white p-5 shadow-md ">
+            ...
+        ```
+
+        <br /> b) Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+        ```
+            Lines 55
+
+            <div className="inset-0 cursor-alias absolute" onClick={onClosePopup} />
+        ```
+
+- [ ]  HomePageCTABoxes component
+
+        <br /> a) Ambiguous spacing before next element span
+
+        ```
+            Line 36
+
+            <span className="font-normal group-hover:tracking-normal group-hover:text-black">
+                <br /> To Our Emails
+            </span>
+        ```
+
+        <br /> b) Remove commented code
+
+        ```
+            Lines 110 - 115
+
+            {/*<StaticImage*/}
+            {/*  alt={'Physical Catalog'}*/}
+            {/*  src="../images/GnS-Home-Page-REGISTER-button.png"*/}
+            {/*  loading="lazy"*/}
+            {/*  className="aspect-square h-full duration-200 hover:rotate-6 hover:scale-110"*/}
+            {/*/>*/}
+        ```
+
+- [ ] TrackingHelper
+
+
+         <br /> a) Remove commented code
+
+        ```
+            Lines 23-51
+
+            /*
+                RudderStack defined identity names
+                - firstName
+                - lastName
+                - name
+                - age
+                - email
+                - phone
+                - address [object]
+                - city
+                - country
+                - postalCode
+                - state
+                - street
+                - birthday
+                - company [object]
+                - name
+                - id
+                - industry
+                - employee_count
+                - plan
+                - createdAt
+                - description
+                - gender
+                - title
+                - username
+                - website
+                - avatar
+            */
+
+        ```
+
+- [ ] Blog Page
+
+         <br /> a) Remove HaveQuestions import, since it's never used
+
+        ```
+            Line 8 
+
+            import HaveQuestions from '../components/repairs/HaveQuestions'
+        ```
+
+
+- [ ] Checkout Page
+
+
+        <br /> a) Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+        ```
+            Line 96 
+
+             <div
+                onClick={closeAlert}
+                className="cart-alert-motion cursor-pointer text-red-700 h-24 flex flex-row text-sm fixed left-[50%] -translate-x-[50%] bg-white border-2 border-red-600 z-[100] shadow-md "
+            >
+
+            Line 107
+
+            <div
+                className="fixed top-0 left-0 w-full h-full bg-black opacity-20 backdrop-blur-sm cursor-pointer"
+                onClick={closeAlert}
+            ></div>
+        ```
+
+- [ ] Easy ship box repairs page
+
+         <br /> a) Remove FileUpload import, since it's never used
+
+        ```
+            Line 7
+
+            import FileUpload from '../components/form/FileUpload'
+        ```
+
+        <br /> b) Remove   const updateUploadedFiles constant, since it's never used
+
+        ```
+            Line 34
+
+            const updateUploadedFiles = files => setNewUserInfo({ ...newUserInfo, profileImages: files })
+        ```
+- [ ]  Ez ship box request form Page
+
+         <br /> a) Remove useState import, since it's never used
+
+        ```
+            Line 2
+
+            import { useState } from 'react'
+
+        ```
+
+- [ ]  Faq page
+
+        <br /> a) Using target="_blank" without rel="noreferrer" (which implies rel="noopener") is a security risk in older browsers: see https://mathiasbynens.github.io/rel-noopener/#recommendations
+
+        ```
+            Line 230 , 239, 292, 340
+
+            <a
+                href="https://sellusyourjewelry.com/what-is-my-watch-worth/"
+                target="_blank"
+                rel="noopener"
+            >
+            {' '}
+            Online Watch Form{' '}
+            </a>{' '}
+            or our{' '}
+            <a
+                href="https://sellusyourjewelry.com/what-is-my-jewelry-worth/"
+                target="_blank"
+                rel="noopener"
+            >
+
+            ...
+
+        ```
+
+        <br /> b) Non-interactive elements should not be assigned mouse or keyboard event listeners
+
+
+        ```
+            Line 417, 451
+
+            <h2
+                className={
+                  (activeCategory === category ? 'text-red-800 ' : 'text-gray-500 ') +
+                  'text-2xl font-bold  cursor-pointer hover:text-red-800'
+                }
+                onClick={() => {
+                  setActiveCategory(category)
+                  setActive(true)
+                }}
+            >
+
+            <h2
+                className={
+                  'text-lg md:text-2xl cursor-pointer ' +
+                  (activeQuestion === item.id ? 'border-b text-red-700 pb-2 mb-2' : '')
+                }
+                onClick={() => setActiveQuestion(id => (id === item.id ? false : item.id))}
+            >
+
+        ```
+
+
+- [ ] Glossary Page
+
+         <br /> a) The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles.
+
+        ```
+            Line 380
+
+            <a id={letter}>{letter}</a>
+
+
+        ```
+- [ ]  News Page
+
+     <br /> a) Node ref constant is never used
+
+        ```
+            Line 56
+
+             const nodeRef = useInfinteScroll(limit, loadMore)
+
+        ```
+
+     <br /> b) Remove commented code
+
+        ```
+            {/* {limit < filteredNews.length && (
+                <button
+                ref={nodeRef}
+                className={'btn-cta p-4 mx-auto grid col-span-1 md:col-span-2 lg:col-span-3 '}
+                onClick={loadMore}
+                >
+                Load More
+                </button>
+            )} */}
+
+        ```
+- [ ]  Repairs page
+
+
+     <br /> a) Do not use Array index in keys
+
+        ```
+            Line 56
+
+            <BrandLinks
+                key={index}
+                className={arrayElement.className}
+                url={arrayElement.url}
+            >
+                {arrayElement.brand}
+            </BrandLinks>
+
+        ```
+
+- [ ] Single News. Remove that page, seems like it's some dummy data page
+
+
+- [ ] Testimonials Page
+
+
+    <br /> a)   Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+    ```
+            Line 20, 59
+
+            <div
+                onClick={show}
+                className={
+                (images && images.length > 0
+                    ? 'border border-gray-300 rounded-lg aspect-[10/12]'
+                    : ' rounded-full aspect-square ') +
+                ' group relative p-4 duration-200 hover:border-blue-200 hover:shadow-md flex flex-col justify-center items-center cursor-pointer '
+                }
+            >
+
+            <div
+                onClick={close}
+                className={
+                    'fixed top-0 left-0 z-50 h-screen w-screen  bg-[rgba(120,120,120,0.5)] backdrop-blur-[2px] cursor-pointer'
+                }
+            />
+
+    ```
+
+    b) Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+
+    ```
+            Line 87
+
+            <div key={i} onClick={() => setSelectedImage(i)}>
+
+    ```
+
+- [ ]  Thank you ez ship box
+
+
+     <br /> a)  Remove useless imports
+
+    ```
+            Line 20, 59
+
+            import ContactAnimation from '../components/ContactAnimation'
+            import TelephoneAnimation from '../components/TelephoneAnimation'
+    ```
+
+- [ ] Blog Post Template
+
+    <br /> a)  Remove commented code
+
+    ```
+        Lines 80 - 121
+
+           {recommended.nodes.map(post => (
+              
+              // <Link
+              //   to={post.url}
+              //   key={post.id}
+              //   className=" w-1/3 max-w-sm rounded-lg bg-white py-4 px-4 shadow-lg duration-200 hover:scale-105 "
+              // >
+              //   <div className="aspect-square mb-5">
+              //     {
+        
+           ...
+    ```
+
+
+- [ ]  Category Template
+
+    <br /> a)  Remove commented code
+
+    ```
+        Lines 28 - 62 , 257 - 260
+           {recommended.nodes.map(post => (
+              
+              // <Link
+              //   to={post.url}
+              //   key={post.id}
+              //   className=" w-1/3 max-w-sm rounded-lg bg-white py-4 px-4 shadow-lg duration-200 hover:scale-105 "
+              // >
+              //   <div className="aspect-square mb-5">
+              //     {
+        
+           ...
+    ```
+
+    <br /> b) Remove useless IconChevronRight import
+
+    ```
+        Line 6
+
+        import { IconChevronRight, IconPlus, IconSearch } from '../components/Icons'
+    ```
+
+- [ ]  Client letter Template
+
+    <br /> a)  Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+    ```
+        Lines 55-62
+           <div
+                onClick={toggleForm}
+                className={
+                open
+                    ? 'hidden backdrop-blur-[2px] md:block top-0 left-0 fixed w-screen h-screen z-20 bg-[rgba(120,120,120,0.5)]'
+                    : 'hidden'
+                }
+            ></div>
+           ...
+    ```
+
+- [ ]  Page template 
+
+    a) remove Static image not used import
+
+    ```
+        Line 5
+
+        import { StaticImage } from 'gatsby-plugin-image'
+
+    ```
+
+- [ ]  Product template
+
+    a) Remove this commented out code
+
+    ```
+        Lines 50 - 54
+        
+        // const redirectToCanonical = canonical => {
+        //   if (typeof window !== 'undefined' && window && window.location.pathname !== canonical) {
+        //     window.history.replaceState(null, null, canonical)
+        //   }
+        // }
+
+        Lines 292 - 305
+        // <div className="animate-fade-in hidden md:flex fixed inset-0 z-[1000] justify-center items-center
+          // bg-gray-200 bg-opacity-40 backdrop-blur-sm">
+          //   <div onClick={() => setShowImage(false)} className="absolute inset-0 z-0 "></div>
+          //   <div className="grid landscape:grid-cols-[1fr_auto] portrait:grid-rows-[1fr_auto] bg-white rounded-xl
+          // shadow-lg p-5 relative"> <button onClick={() => setShowImage(false)} className="absolute top-4 left-4
+          // z-50 border-2 rounded-full h-10 w-10 border-gray-300 text-gray-300 hover:border-gray-500
+          // hover:text-gray-500 duration-200" > X </button> <div className="aspect-square w-full max-w-[90vw]
+          // max-h-[90vh] border-2 w-9/10 m-auto landscape:col-span-1 landscape:row-span-2 portrait:col-span-2
+          // portrait:row-span-1 "> <GatsbyImage image={getImage(currentImage)} alt={info.title} className={''} />
+          // </div> <div>
+
+          //     </div>
+          //   </div>
+          // </div>
+
+    ```
+
+    b) Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.
+
+    ```
+        
+       Line 278
+
+       <div
+            className="grid grid-[1/1] aspect-square cursor-zoom-in landscape:w-full max-w-36 portrait:h-full max-h-[7.5rem] border p-1 hover:border-b-red-700 duration-200"
+            key={index}
+            onClick={() => setCurrentImage(image)}
+        >
+        ...
+
+    ```
+
+- [ ]  Repair blog category Template
+
+    a) The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles.
+
+    ```
+        Lines 16 - 21
+        
+        <a
+            className={
+                (url ? 'duration-200 text-red-700 hover:underline' : 'text-gray-500') +
+                (className ? ' ' + className : '')
+            }
+        >
+
+    ```
+
+    b) Do not use Array index in keys
+
+     ```
+        Lines 16 - 21
+        
+        <BrandLinks
+            key={index}
+            className={arrayElement.className}
+            url={arrayElement.url}
+        >
+            {page.brand}
+            <br />
+            {arrayElement.title}
+        </BrandLinks>
+
+    ```

@@ -1,0 +1,145 @@
+# Issues List
+
+### Critical
+
+### Warnings
+
+---
+
+- [x] **Dennis** Second menu in the Header has cropped links(large devices > 1540px)
+
+![second-menu](/seo/second-menu.png)
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/
+
+The names of the menu items are not displayed in full, which may cause difficulties for the user.
+
+---
+
+- [x] **Dennis** Sort By: - fix layout
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/
+
+![sort-dropdown](/seo/sort-dropdown.png)
+
+Solution
+
+1. Fix the colors.
+2. Consider using a radio button.
+
+### Recommendations
+
+---
+
+- [x] **Greg** Pagination Pages
+
+Description
+
+Links list:
+
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-2/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-3/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-4/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-5/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-6/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-7/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-8/
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-9/
+
+Solution
+
+a) Add rel="canonical" to the first page
+
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-2/
+
+> `<link rel="canonical" href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/" />`
+
+- https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-3/
+
+> `<link rel="canonical" href="https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/" />`
+
+b) Add the following meta robots
+
+> `<meta name="robots" content="NOINDEX,FOLLOW" />`
+
+c) Remove texts on pagination pages, under products. e.g. remove from page-2, page-3 etc, but leave here https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/
+
+![text-under-pagination](/seo/text-under-pagination.png)
+
+d) Update the link from the page number to yourself to make it span instead `<a> ` tag
+
+That will help crawlers work correctly and makes user experience better
+
+so if user on https://fabulous-gecko-88393f.netlify.app/fine-watches/rolex/rolex-day-date-president/page-2/ update 2 with span and highlight it with background color
+
+Example: https://cryptotaxcalculator.io/au/resources/2/
+
+---
+
+- [x] **Greg** Text below the products on the first page of a category
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/patek-philippe/
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/patek-philippe/gondolo/
+
+Solution
+
+a) Need to format the text, add H2-H3 headings, lists, and other markup.
+
+b) All links will either not work or redirect will work. Most likely, will have to update these links with correct internal links
+
+![text-not-formatted](/seo/text-not-formatted.png)
+
+---
+
+- [x] **Dennis** Drop-down menu on the category catalog page - Update with “show more” or something else but better to use word instead icon
+
+Dennis: We have decided to keep it as is.
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/fine-watches/
+
+![not-clear-button-for-user](/seo/not-clear-button-for-user.png)
+
+This button does not visually suggest that there are additional categories hidden in it.
+
+Solution
+
+Visualize more familiarly clear to the user. It's just that the user won't even realize that there are categories hidden in this button.
+
+---
+
+- [ ] **Greg** On product page remove active link in breadcrumb
+
+Description
+
+https://fabulous-gecko-88393f.netlify.app/s520527-chanel-diamond-star-18k-white-gold-ea/
+
+![remove-link-itself](/seo/remove-link-itself.png)
+
+---
+
+- [x] **Greg** Replace the link with Google Map - link from the product page goes to the address, not gray and sons
+
+Description
+
+The link is used in the product card
+
+https://www.google.com/maps/search/?api=1&query=9595%20Harding%20Ave%2C%20Surfside%2C%20FL%2C%2033154&ll=Gray%20&%20Sons
+
+![wrong-g-maps-address](/seo/wrong-g-maps-address.png)
+
+Solution
+
+a) Recommend replacing the link with https://maps.app.goo.gl/aNtfVtZo1bYeaHbR9.
+
+b) Recommend adding Nofollow.
+
+![link-gmaps](/seo/link-gmaps.png)
